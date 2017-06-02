@@ -8,7 +8,7 @@ class PiMark {
   
   public static double pi(int top)
   {
-  	return 1/((2*Math.sqrt(2)/9801) * summation(k -> piSum(k), 0, top));
+  	return 1/((2*Math.sqrt(2)/9801) * summation(x -> piSum(x), 0, top));
   }
   
   public static double summation(Function<Integer, Double> function, int k, int top)
