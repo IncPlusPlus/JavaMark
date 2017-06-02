@@ -26,7 +26,7 @@ class Main {
 
   public static BigInteger factorial(BigInteger n)
   {
-  	return n.compareTo(BigInteger.valueOf(2)) < 0 ? BigInteger.valueOf(1) : n.multiply(factorial(n-1));
+  	return n.compareTo(BigInteger.valueOf(2)) < 0 ? BigInteger.valueOf(1) : n.multiply(factorial(n.subtract(BigInteger.valueOf(1))));
   }
 }
 //https://docs.oracle.com/javase/7/docs/api/java/math/BigInteger.html
