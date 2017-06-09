@@ -14,7 +14,7 @@ If you are running this the correct way. You are guaranteed to run into a `java.
 ### To Do
 - [x] Implement [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 - [ ] Implement lossy pi calc
-- [ ] Implement [Lucas–Lehmer primality test](https://en.wikipedia.org/wiki/Lucas%E2%80%93Lehmer_primality_test)
+- [ ] ~Implement [Lucas–Lehmer primality test](https://en.wikipedia.org/wiki/Lucas%E2%80%93Lehmer_primality_test)~
 - [ ] Add [Guava](https://github.com/google/guava)'s [Stopwatch class](http://google.github.io/guava/releases/22.0/api/docs/com/google/common/base/Stopwatch.html) for timing function calls
 
 
