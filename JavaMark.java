@@ -18,6 +18,7 @@ public class JavaMark
 				case 3: System.out.print("Sorry. That's not an option yet.\n");//the special prime thing Noah is making
 						break;
 				default: System.out.print("Sorry. That's not an option.\n");
+						break;
 			}
 		}
 		catch(java.util.InputMismatchException e)
