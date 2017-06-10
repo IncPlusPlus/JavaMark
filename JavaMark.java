@@ -7,24 +7,23 @@ public class JavaMark
 		System.out.println("Welcome to JavaMark, \nthe benchmark utility that is given under the MIT License with an 'as is' warranty.\nBy continuing after this message, you certify that any damage done to your machine \nis not at the legal fault or liability of the developers of this software.");
 		System.out.println("Select a benchmark to run by typing its corresponding number, then press enter.\n");
 		System.out.print("[1] - Sieve Of Eratosthenes\n[2] - Innacurate pi calculation\n[3] - UNIMPLEMENTED\nType any other number or string to quit\n:");
-		// try
-		// {
-		// 	switch(in.nextInt())
-		// 	{
-		// 		case 1: sieveOfEratosthenesWrapper();
-		// 				break;
-		// 		case 2: System.out.print("Sorry. That's not an option yet.\n");//Insert PiMark code
-		// 				break;
-		// 		case 3: System.out.print("Sorry. That's not an option yet.\n");//the special prime thing Noah is making
-		// 				break;
-		// 		default: System.out.print("Sorry. That's not an option.\n");
-		// 	}
-		// }
-		// catch(java.util.InputMismatchException e)
-		// {
-		// 	System.out.println("Quitting...\n");
-		// }
-		sieveOfEratosthenes(0);
+		try
+		{
+			switch(in.nextInt())
+			{
+				case 1: sieveOfEratosthenesWrapper();
+						break;
+				case 2: System.out.print("Sorry. That's not an option yet.\n");//Insert PiMark code
+						break;
+				case 3: System.out.print("Sorry. That's not an option yet.\n");//the special prime thing Noah is making
+						break;
+				default: System.out.print("Sorry. That's not an option.\n");
+			}
+		}
+		catch(java.util.InputMismatchException e)
+		{
+			System.out.println("Quitting...\n");
+		}
 	}
 	public static void sieveOfEratosthenesWrapper()
 	{
@@ -54,6 +53,7 @@ public class JavaMark
 		{
 			n = 2100000000;
 		}
+		//Add a try/catch of initializing the boolean array to check if enough memory is allocated
 		boolean[] prime = new boolean[n+1];
 		for(int i=0;i<n;i++)
 		{
