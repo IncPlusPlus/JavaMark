@@ -1,4 +1,8 @@
+import com.google.common.base.Stopwatch; //http://google.github.io/guava/releases/20.0/api/docs/com/google/common/base/Stopwatch.html
+//Since we're not using an IDE, we need to specify the classpath during compilation
+//See https://stackoverflow.com/questions/9840521/how-to-add-jar-file-to-the-java-code
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 public class JavaMark
 {
 	public static void main(String[] args)
@@ -45,8 +49,12 @@ public class JavaMark
 			sieveOfEratosthenesWrapper();
 			return;
 		}
+		Stopwatch stopwatch = Stopwatch.createStarted();
 		sieveOfEratosthenes(top);
+		stopwatch.stop();
+		// long millis = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 		System.out.println("\n");
+		System.out.println("Elapsed: " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
 	}
 	public static void sieveOfEratosthenes(int n)
 	{
