@@ -49,25 +49,31 @@ public class JavaMark
 			sieveOfEratosthenesWrapper();
 			return;
 		}
-		Stopwatch stopwatch = Stopwatch.createStarted();
+		
 		sieveOfEratosthenes(top);
-		stopwatch.stop();
+		
 		// long millis = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 		System.out.println("\n");
-		System.out.println("Elapsed: " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
+		// System.out.println("Elapsed: " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
 	}
-	public static void sieveOfEratosthenes(int n)
+	public static long sieveOfEratosthenes(int a)
 	{
-		if(n == 0)
+      int n = 0;
+		if(a == 0)
 		{
 			n = 2100000000;
 		}
+      else
+      {
+         n = a;
+      }
 		//Add a try/catch of initializing the boolean array to check if enough memory is allocated
 		boolean[] prime = new boolean[n+1];
 		for(int i=0;i<n;i++)
 		{
 			prime[i] = true;
 		}
+      Stopwatch stopwatch = Stopwatch.createStarted();
 		for(int p = 2; p*p <=n; p++)
 		{
 			if(prime[p])
@@ -79,6 +85,7 @@ public class JavaMark
 				}
 			}
 		}
+      stopwatch.stop();
 		for(int i = 2; i <= n; i++)
 		{
 			if(prime[i])
@@ -86,5 +93,6 @@ public class JavaMark
 				System.out.print(i + " ");
 			}
 		}
+      return stopwatch.elapsed(TimeUnit.MILLISECONDS);
 	}
 }
