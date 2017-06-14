@@ -50,11 +50,14 @@ public class JavaMark
 			return;
 		}
 		
-		sieveOfEratosthenes(top);
+		
 		
 		// long millis = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 		System.out.println("\n");
-		// System.out.println("Elapsed: " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
+      long[] timeArr = new long[50];
+      for (int i = 0; i < timeArr.length; i++)
+         timeArr[i] = sieveOfEratosthenes(top);
+		System.out.println("Elapsed: " + average(timeArr));
 	}
 	public static long sieveOfEratosthenes(int a)
 	{
@@ -86,13 +89,21 @@ public class JavaMark
 			}
 		}
       stopwatch.stop();
-		for(int i = 2; i <= n; i++)
-		{
-			if(prime[i])
-			{
-				System.out.print(i + " ");
-			}
-		}
-      return stopwatch.elapsed(TimeUnit.MILLISECONDS);
+// 		for(int i = 2; i <= n; i++)
+// 		{
+// 			if(prime[i])
+// 			{
+// 				System.out.print(i + " ");
+// 			}
+// 		}
+      return stopwatch.elapsed(TimeUnit.MICROSECONDS);
 	}
+   
+   public static long average(long[] arr)
+   {
+      long avg = 0;
+      for (long val : arr)
+         avg += val;
+      return avg/arr.length;
+   }
 }
