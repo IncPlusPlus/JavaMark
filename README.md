@@ -4,6 +4,7 @@ JavaMark is a utility that performs a benchmark of a CPU by performing a handful
 [![Build Status](https://travis-ci.org/thedudeguy1/JavaMark.svg?branch=master)](https://travis-ci.org/thedudeguy1/JavaMark)
 [![StyleCI](https://styleci.io/repos/93119589/shield?branch=master)](https://styleci.io/repos/93119589)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/033401b56b974a359752656f7ab1f289)](https://www.codacy.com/app/thedudeguy1/JavaMark?utm_source=github.com&utm_medium=referral&utm_content=thedudeguy1/JavaMark&utm_campaign=badger)
+[![codebeat badge](https://codebeat.co/badges/3adc24df-a448-4592-a19b-16525f0000bc)](https://codebeat.co/projects/github-com-thedudeguy1-javamark-master)
 
 ### Purpose
 This project was a random idea I came up with and now it became much larger than I had thought it could.
