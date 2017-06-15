@@ -54,7 +54,7 @@ public class JavaMark
 		
 		// long millis = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 		System.out.println("\n");
-      long[] timeArr = new long[50];
+      long[] timeArr = new long[Math.max((int)(top/1.5),1000)];
       for (int i = 0; i < timeArr.length; i++)
          timeArr[i] = sieveOfEratosthenes(top);
 		System.out.println("Elapsed: " + average(timeArr));
@@ -64,7 +64,7 @@ public class JavaMark
       int n = 0;
 		if(a == 0)
 		{
-			n = 2100000000;
+			n = 2000000000;
 		}
       else
       {
