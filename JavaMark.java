@@ -37,7 +37,7 @@ public class JavaMark
 		Scanner in = new Scanner(System.in);
 		top = in.nextInt();
 		in.nextLine();
-		if(top > 2100000000)
+		if(top > 100000000)
 		{
 			System.out.print("Try a number that's smaller.\n");
 			sieveOfEratosthenesWrapper();
@@ -54,22 +54,19 @@ public class JavaMark
 		
 		// long millis = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 		System.out.println("\n");
-      long[] timeArr = new long[Math.max((int)(top/1.5),1000)];
+      int[] timeArr = new int[Math.max((int)(Math.sqrt(top)*5),10000)];
       for (int i = 0; i < timeArr.length; i++)
          timeArr[i] = sieveOfEratosthenes(top);
 		System.out.println("Elapsed: " + average(timeArr));
 	}
-	public static long sieveOfEratosthenes(int a)
+	public static int sieveOfEratosthenes(int a)
 	{
-      int n = 0;
-		if(a == 0)
+      int n = a;
+		if(n == 0)
 		{
-			n = 2000000000;
+			n = 100000000;
 		}
-      else
-      {
-         n = a;
-      }
+      
 		//Add a try/catch of initializing the boolean array to check if enough memory is allocated
 		boolean[] prime = new boolean[n+1];
 		for(int i=0;i<n;i++)
@@ -96,7 +93,7 @@ public class JavaMark
 // 				System.out.print(i + " ");
 // 			}
 // 		}
-      return stopwatch.elapsed(TimeUnit.MICROSECONDS);
+      return (int)stopwatch.elapsed(TimeUnit.MICROSECONDS);
 	}
    
    public static long average(long[] arr)
