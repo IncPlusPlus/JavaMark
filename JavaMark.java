@@ -32,7 +32,7 @@ public class JavaMark
 	}
 	public static void sieveOfEratosthenesWrapper()
 	{
-		int top = 0;
+		int top;
 		System.out.print("Enter a number to find primes from 2 through that number: ");
 		Scanner in = new Scanner(System.in);
 		top = in.nextInt();
@@ -96,7 +96,7 @@ public class JavaMark
       return (int)stopwatch.elapsed(TimeUnit.MICROSECONDS);
 	}
    
-   public static long average(long[] arr)
+   public static long average(int[] arr)
    {
       long avg = 0;
       for (long val : arr)
