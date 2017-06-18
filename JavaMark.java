@@ -53,7 +53,7 @@ public class JavaMark
 	public static void sieveOfEratosthenesWrapper()
 	{
 		int top;    // Init the value to find primes up to
-		System.out.print("Enter a number to find primes from 2 through that number: ");
+		System.out.print("Enter a number to find primes up to that number: ");
 		Scanner in = new Scanner(System.in);
 		top = in.nextInt();	//Take user's input
 		in.nextLine();	//Clear the line character for possible next inputs
