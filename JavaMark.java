@@ -74,27 +74,45 @@ public class JavaMark
 		}
 
 
-      /**/
+      /*
+      * timeArr is an array that will hold the completion time of each execution of the sieve.
+      * The int "top" influences the number of executions of the sieve.
+      * This is to ensure a more consistent number. 50000 is the minimum number of tests.
+      * These times will later be averaged to determine the average completion time.
+      */
       int[] timeArr = new int[Math.max((int)(Math.sqrt(top)*5),50000)];
+      //Create the array of completion times
       for (int i = 0; i < timeArr.length; i++)
          timeArr[i] = sieveOfEratosthenes(top);
-		System.out.println("Elapsed: " + average(timeArr));
+      //Output the average time of the array of times
+      System.out.println("Elapsed: " + average(timeArr));
 	}
+
+	/**
+	 * Runs the sieve. The sieve creates an array of true booleans.
+	 * The array is iterated across and
+	 * @param a the number to determine primes up to
+	 * @return an int of the execution time.
+	 */
 	public static int sieveOfEratosthenes(int a)
 	{
+		/*
+		* Init a local variable to be used as
+		* the number to find primes up to
+		*/
 		int n = a;
+		//This will occur only when the auto benchmark is to be run.
 		if(n == 0)
 		{
 			n = 100000000;
 		}
-      
-		//Add a try/catch of initializing the boolean array to check if enough memory is allocated
-		boolean[] prime = new boolean[n+1];
-		for(int i=0;i<n;i++)
+
+		boolean[] prime = new boolean[n+1];	//Create boolean array
+		for(int i=0; i<n; i++)
 		{
-			prime[i] = true;
+			prime[i] = true;	//Set each boolean to true
 		}
-      Stopwatch stopwatch = Stopwatch.createStarted();
+      	Stopwatch stopwatch = Stopwatch.createStarted();
 		for(int p = 2; p*p <=n; p++)
 		{
 			if(prime[p])
@@ -106,22 +124,28 @@ public class JavaMark
 				}
 			}
 		}
-      stopwatch.stop();
-// 		for(int i = 2; i <= n; i++)
-// 		{
-// 			if(prime[i])
-// 			{
-// 				System.out.print(i + " ");
-// 			}
-// 		}
-      return (int)stopwatch.elapsed(TimeUnit.MICROSECONDS);
+
+		stopwatch.stop();
+ 		for(int i = 2; i <= n; i++)
+ 		{
+ 			if(prime[i])
+ 			{
+ 				System.out.print(i + " ");
+ 			}
+ 		}
+ 		return (int)stopwatch.elapsed(TimeUnit.MICROSECONDS);
 	}
-   
-   public static long average(int[] arr)
-   {
-      long avg = 0;
-      for (long val : arr)
-         avg += val;
-      return avg/arr.length;
-   }
+
+	/**
+	 *
+	 * @param arr the array of values to average
+	 * @return the average of the elements in the array
+	 */
+	public static long average(int[] arr)
+	{
+		long total = 0;
+		for (long val : arr)
+			total += val;
+		return total/arr.length;
+	}
 }
