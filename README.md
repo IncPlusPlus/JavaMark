@@ -1,4 +1,7 @@
 # JavaMark
+
+#### Note: This project is messy because of the short timeline it had as a school project. I had intended to bring this back sometime in the near future but this is looking unlikely due to the inconsistencies in the JVM which will change runtime numbers. It would likely be more stable if written in a language such as C++ when I manage to allocate (haha malloc joke) enough time to really learning it.
+
 JavaMark is a utility that performs a benchmark of a CPU by performing a handful of operations to load test a target CPU.
 
 [![Build Status](https://travis-ci.org/thedudeguy1/JavaMark.svg?branch=master)](https://travis-ci.org/thedudeguy1/JavaMark)
